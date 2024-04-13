@@ -37,11 +37,25 @@
 </head>
 <body>
     <div class="container">
-        <form action="https://kekdoubleu.github.io/Private-Travel-Log/"> <!-- Change 'submit_page.html' to the page where you want to redirect after submitting the password -->
-            <label for="password">Password:</label><br>
+        <h2>Login</h2>
+        <form onsubmit="return validatePassword()" action="https://kekdoubleu.github.io/Private-Travel-Log/">
+            <label for="password">Enter Password:</label><br>
             <input type="password" id="password" name="password" required><br><br>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Login">
         </form>
     </div>
+
+    <script>
+        function validatePassword() {
+            var enteredPassword = document.getElementById("password").value;
+            // Replace "YourCustomPassword" with your desired custom password
+            var customPassword = "15437";
+            if (enteredPassword !== customPassword) {
+                alert("Incorrect password. Please try again.");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
 </html>
