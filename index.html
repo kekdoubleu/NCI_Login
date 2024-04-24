@@ -40,8 +40,6 @@
     <div class="container">
         <h2>Login</h2>
         <form onsubmit="return validateCredentials()" action="https://kekdoubleu.github.io/Private-Travel-Log/">
-            <label for="username">Username:</label><br>
-            <input type="text" id="username" name="username" required><br><br>
             <label for="password">Password:</label><br>
             <input type="password" id="password" name="password" required><br><br>
             <input type="submit" value="Login">
@@ -50,13 +48,11 @@
 
     <script>
         function validateCredentials() {
-            var enteredUsername = document.getElementById("username").value;
             var enteredPassword = document.getElementById("password").value;
             // Replace "YourCustomUsername" and "YourCustomPassword" with your desired credentials
-            var customUsername = "LEBAHGCFD";
-            var customPassword = "Doxycyclin";
-            if (enteredUsername !== customUsername || enteredPassword !== customPassword) {
-                alert("Incorrect username or password. Please try again.");
+            var customPassword = "LEBAHGCFD";
+            if (enteredPassword !== customPassword) {
+                alert("Incorrect password. Please try again.");
                 return false;
             }
             return true;
