@@ -15,6 +15,7 @@
             max-width: 300px;
             margin: 0 auto;
         }
+        input[type=text],
         input[type=password] {
             width: 100%;
             padding: 12px 20px;
@@ -38,20 +39,24 @@
 <body>
     <div class="container">
         <h2>Login</h2>
-        <form onsubmit="return validatePassword()" action="https://kekdoubleu.github.io/Private-Travel-Log/">
-            <label for="password">Enter Password:</label><br>
+        <form onsubmit="return validateCredentials()" action="https://kekdoubleu.github.io/Private-Travel-Log/">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label><br>
             <input type="password" id="password" name="password" required><br><br>
             <input type="submit" value="Login">
         </form>
     </div>
 
     <script>
-        function validatePassword() {
+        function validateCredentials() {
+            var enteredUsername = document.getElementById("username").value;
             var enteredPassword = document.getElementById("password").value;
-            // Replace "YourCustomPassword" with your desired custom password
-            var customPassword = "LEBAHGCFD";
-            if (enteredPassword !== customPassword) {
-                alert("Incorrect password. Please try again.");
+            // Replace "YourCustomUsername" and "YourCustomPassword" with your desired credentials
+            var customUsername = "LEBAHGCFD ";
+            var customPassword = "Doxycyclin";
+            if (enteredUsername !== customUsername || enteredPassword !== customPassword) {
+                alert("Incorrect username or password. Please try again.");
                 return false;
             }
             return true;
